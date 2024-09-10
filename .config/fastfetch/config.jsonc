@@ -1,0 +1,53 @@
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"modules": [
+		"title",
+		"separator",
+		"cpu",
+		"gpu",
+		{
+			"type":"memory",
+			"format":"{1} / {2} {4}({3})"
+		},
+		{
+			"type":"swap",
+			"format":"{1} / {2} {4}({3})"
+		},
+		{
+			"type":"disk",
+			"format":"{1} / {2} {13}({3}) - {9}"
+		},
+		{
+			"type":"battery",
+			"format":"{10}({4}), {5}",
+			"key":"Battery"
+		},	
+		{
+			"type":"bluetooth",
+			"format":"{1} {6}({4})"
+		},
+		"break",
+		"os",
+		"kernel",
+		"packages",
+		"lm",	
+		"de",	
+		"wm",	
+		"shell",
+		"terminal",	
+		"uptime",
+		"break",
+		{
+            "type": "command",
+            "shell": "/bin/bash",
+            "key": "󱎫",
+            "text": "~/.config/fastfetch/progress.sh"
+        },
+        {
+            "type": "command",
+            "shell": "/bin/bash",
+            "key": "󱎫",
+            "text": "~/.config/fastfetch/difference.sh"
+        }
+	]
+}
