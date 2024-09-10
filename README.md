@@ -1,5 +1,8 @@
 # Notes
-
+## Reinstall reminder
+cd into the dir and run 
+``$ stow .``
+to populate regular dotfile locations with symlinks to these files
 ## FastFetch
 
 challenge timer scripts from TheLinuxCast
