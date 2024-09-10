@@ -3,6 +3,8 @@
 cd into the dir and run 
 ``$ stow .``
 to populate regular dotfile locations with symlinks to these files
+
+the package list is the output of paru -Qe, any deps are not listed as they are not needed to reinstall a dupe of the system, they will be pulled in by the explicitly installed packages that need them
 ## FastFetch
 
 challenge timer scripts from TheLinuxCast
