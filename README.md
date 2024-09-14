@@ -13,3 +13,6 @@ challenge timer scripts from TheLinuxCast
 
 currently treesitter downloads for all languages since its pretty quick and ensures if I need something its there. Might change this once I add LSPs
 
+## Cosmic 
+
+temporarily removed as having their files here causes weird issues with stow
