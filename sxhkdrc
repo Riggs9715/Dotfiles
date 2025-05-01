@@ -1,0 +1,62 @@
+# restart bspwm
+
+super + shift + r
+	bspc wm -r
+
+# quit bspwm
+super + shift + Escape
+	bspc quit
+
+# randomise wallpaper
+super + shift + w
+	shuf -e -n1 $HOME/Pictures/Wallpapers/* | xargs feh --bg-scale --no-fehbg
+
+# close window
+super + c
+	bspc node -c
+
+# focus desktop
+super + {1-9,0}
+	bspc desktop -f {1-9,10}
+
+# send window to desktop
+super + shift + {1-9,0}
+	bspc node -d {1-9,10}
+
+# focus window 
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# swap window 
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
+
+# preselection
+super + control + {h,j,k,l,Escape}
+	bspc node -p {west,south,north,east,cancel}
+
+# smart resize
+super + alt + {h,j,k,l}
+	n=20; \
+	{ d1=left;   d2=right;  dx=-$n; dy=0;   \
+	, d1=bottom; d2=top;    dx=0;   dy=$n;  \
+	, d1=top;    d2=bottom; dx=0;   dy=-$n; \
+	, d1=right;  d2=left;   dx=$n;  dy=0;   \
+	} \
+	bspc node --resize $d1 $dx $dy || bspc node --resize $d2 $dx $dy
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0, 0 20, 0 -20, 20 0}
+
+# toggle floating/tiled
+super + f
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# terminal
+super + Return
+	kitty
+
+# launcher
+super + space
+	rofi -show drun
